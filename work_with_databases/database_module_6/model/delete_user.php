@@ -5,8 +5,8 @@ try {
     $sql = "DELETE FROM students WHERE students.id = :id";
     $statement = $pdo->prepare($sql);
     $statement->execute($_GET);
+    header("Location: ../index.php");
 } catch(PDOException $error) {
-    echo "Ошибка удаления:" . $error->getMessage();
+    die("Ошибка удаления:" . $error->getMessage());
 }
-header("Location: ../index.php");
 

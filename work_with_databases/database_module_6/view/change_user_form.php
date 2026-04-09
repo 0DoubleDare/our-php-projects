@@ -6,9 +6,8 @@ require '../config.php';
 $statement = $pdo->prepare("SELECT * FROM students WHERE id = :id");
 $statement->execute($_GET);
 $student = $statement->fetch();
-$statement = $pdo->prepare("SELECT * FROM groups");
-$statement->execute();
-$groups = $statement->fetchAll();
+
+$group = $pdo->query("SELECT * FROM groups")->fetchAll();
 ?>
 <!doctype html>
 <html lang="en">

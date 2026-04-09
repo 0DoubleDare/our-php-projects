@@ -23,6 +23,7 @@ $students = $statement->fetchAll();
 <body>
     <h1>Список студентов</h1>
     <a href="view/add_student_form.php">Добавить</a>
+    <a href="view/schedule_view.php">Просмотреть расписание</a>
     <ul>
         <?php foreach($students as $student): ?>
             <li><?= htmlspecialchars($student['name']) ?></li>

@@ -6,7 +6,6 @@ $data = [
     'group_id' => $_POST['group_id']
 ];
 try {
-    print_r($_POST);
     $sql = "
         UPDATE students 
         SET group_id = :group_id, name = :name
@@ -16,6 +15,6 @@ try {
     $statement->execute($data);
     header("Location: ../index.php");
 } catch (PDOException $e) {
-    echo $e->getMessage();
+    die("Ошибка обновления: " . $e->getMessage());
 }
 
